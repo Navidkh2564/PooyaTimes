@@ -1,0 +1,259 @@
+/* --------------------
+   General
+-------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3ead7;
+    color: #111;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* --------------------
+   Header
+-------------------- */
+
+.header {
+    background: #183f2b;
+    color: #f3ead7;
+}
+
+/* Top Bar */
+
+.top-bar {
+    border-bottom: 1px solid #496b58;
+    font-size: 13px;
+}
+
+.top-bar .container {
+    min-height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Logo */
+
+.logo-area {
+    padding: 25px 0;
+}
+
+.logo {
+    text-align: center;
+    line-height: 1;
+}
+
+.logo a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    color: #b89b5e;
+}
+
+.logo-main {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.logo-sub {
+    width: 100%;
+    margin-top: 8px;
+    padding-top: 6px;
+
+    border-top: 2px solid #b89b5e;
+
+    color: #b89b5e;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 8px;
+}
+
+
+/* Navigation */
+
+.navbar {
+    border-top: 1px solid #496b58;
+    border-bottom: 4px solid #102d1f;
+}
+
+.navbar .container {
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.navbar a {
+    color: #f3ead7;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.navbar a:hover {
+    color: #b89b5e;
+}
+
+/* --------------------
+   Main Layout
+-------------------- */
+
+.main-content {
+    width: 90%;
+    max-width: 1400px;
+    margin: 30px auto;
+}
+
+.page-layout {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr) 180px;
+    gap: 25px;
+    align-items: start;
+}
+
+
+/* --------------------
+   Sidebars / Ads
+-------------------- */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.ad-box {
+    height: 250px;
+    background: #e8dcc4;
+    border: 2px solid #183f2b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #183f2b;
+}
+
+
+/* --------------------
+   Center Content
+-------------------- */
+
+.content {
+    min-width: 0;
+}
+
+.content section {
+    margin-bottom: 40px;
+}
+
+.content h1,
+.content h2 {
+    margin-top: 0;
+}
+
+
+/* --------------------
+   News
+-------------------- */
+
+.news-card {
+    background: #faf4e6;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #183f2b;
+    border-right: 5px solid #183f2b;
+}
+
+.news-card h2 {
+    margin-top: 0;
+}
+
+
+/* --------------------
+   Articles
+-------------------- */
+
+.article-card {
+    background: #faf4e6;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #183f2b;
+    border-right: 5px solid #183f2b;
+}
+
+
+/* --------------------
+   Footer
+-------------------- */
+
+.footer {
+    background: #183f2b;
+    color: #fff;
+    border-top: 4px solid #102d1f;
+    padding: 25px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+/* --------------------
+   Mobile
+-------------------- */
+
+@media (max-width: 900px) {
+
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 0;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .sidebar {
+        grid-template-columns: 1fr;
+    }
+
+}
