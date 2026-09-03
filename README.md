@@ -44,7 +44,7 @@ python manage.py runserver
 
 سایت در آدرس زیر در دسترس خواهد بود:
 
-`https://pooyatimes.ir`
+`http://127.0.0.1:8000/`
 
 ## License
 
