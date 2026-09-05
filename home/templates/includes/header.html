@@ -1,0 +1,29 @@
+<header class="header">
+    <div class="top-bar">
+        <div class="container">
+            <span>PooyaTimes</span>
+            <span>پایگاه خبری و آموزشی</span>
+            <span>{% now "j F Y" %}</span>
+        </div>
+    </div>
+
+    <div class="logo-area">
+        <div class="container">
+            <div class="logo">
+                <a href="{% url 'home:home' %}">Pooya Times</a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar" aria-label="منوی اصلی">
+        <div class="container">
+            <a href="{% url 'home:home' %}">خانه</a>
+            <a href="#">حساب کاربری</a>
+            <a href="{% url 'news:list' %}">اخبار</a>
+            <a href="#">مشاوره</a>
+            <a href="#">مقالات</a>
+            <a href="#">دل‌نوشته</a>
+            <a href="#">تبلیغات</a>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ news_item.title }} | Pooya Times{% endblock %}
+{% block meta_description %}{{ news_item.summary }}{% endblock %}
+
+{% block content %}
+<main class="article-page">
+    <article class="article-detail">
+        <header class="article-header">
+            <a class="story-label" href="{% url 'news:list' %}?category={{ news_item.category.slug }}">{{ news_item.category.name }}</a>
+            <h1>{{ news_item.title }}</h1>
+            <p class="article-lead">{{ news_item.summary }}</p>
+            <div class="news-meta article-meta">
+                <span>{{ news_item.author_display_name }}</span>
+                <span>{{ news_item.reading_time }} دقیقه مطالعه</span>
+                <time datetime="{{ news_item.published_at|date:'c' }}">{{ news_item.published_at|date:"j F Y" }}</time>
+            </div>
+        </header>
+
+        {% if news_item.display_image_url %}
+            <figure class="article-hero">
+                <img src="{{ news_item.display_image_url }}" alt="{{ news_item.title }}">
+            </figure>
+        {% endif %}
+
+        <div class="article-body">
+            {% if news_item.content_blocks.all %}
+                {% for block in news_item.content_blocks.all %}
+                    {% if block.text %}
+                        <section class="article-text-block">{{ block.text|linebreaks }}</section>
+                    {% elif block.image %}
+                        <figure class="article-inline-image">
+                            <img src="{{ block.image.url }}" alt="{{ block.caption|default:news_item.title }}">
+                            {% if block.caption %}<figcaption>{{ block.caption }}</figcaption>{% endif %}
+                        </figure>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {{ news_item.body|linebreaks }}
+            {% endif %}
+        </div>
+
+        {% if news_item.attachments.all %}
+            <section class="article-attachments" aria-labelledby="attachments-title">
+                <h2 id="attachments-title">فایل‌های پیوست</h2>
+                {% for attachment in news_item.attachments.all %}
+                    <a href="{{ attachment.file.url }}" download>
+                        <span>{{ attachment.display_name }}</span>
+                        <small>دریافت فایل</small>
+                    </a>
+                {% endfor %}
+            </section>
+        {% endif %}
+    </article>
+
+    {% if related_news %}
+        <aside class="related-news" aria-labelledby="related-title">
+            <h2 id="related-title">مطالب مرتبط</h2>
+            <div class="related-news-grid">
+                {% for item in related_news %}
+                    <a href="{{ item.get_absolute_url }}">
+                        <span>{{ item.category.name }}</span>
+                        <h3>{{ item.title }}</h3>
+                    </a>
+                {% endfor %}
+            </div>
+        </aside>
+    {% endif %}
+</main>
+{% endblock %}

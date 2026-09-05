@@ -1,346 +1,218 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+{% block title %}پویا تایمز | پایگاه خبری و آموزشی{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block content %}
+<main class="main-content">
+    <div class="page-layout">
+        <aside class="sidebar sponsored-sidebar" aria-labelledby="sponsored-title">
+            <h2 class="sidebar-title" id="sponsored-title">حامیان مالی</h2>
 
-    <title>PooyaTimes</title>
-
-    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
-</head>
-
-<body>
-
-    <!-- Header -->
-    <header class="header">
-
-        <div class="top-bar">
-            <div class="container">
-                <span>PooyaTimes</span>
-                <span>پایگاه خبری و آموزشی</span>
-                <span>۳ سپتامبر ۲۰۲۶</span>
-            </div>
-        </div>
-
-        <div class="logo-area">
-            <div class="container">
-
-                <div class="logo">
-                    <a href="/">Pooya Times</a>
+            <a class="sponsored-card" href="#">
+                <div class="ad-image"><span>تصویر تبلیغ</span></div>
+                <div class="ad-copy">
+                    <span>پیشنهاد ویژه</span>
+                    <h3>دوره جمع‌بندی و آمادگی برای آزمون</h3>
+                    <small>با حمایت مجموعه آموزشی پویا</small>
                 </div>
-
-            </div>
-        </div>
-
-        <nav class="navbar">
-            <div class="container">
-
-                <a href="/">خانه</a>
-                <a href="#">حساب کاربری</a>
-                <a href="#">اخبار</a>
-                <a href="#">مشاوره</a>
-                <a href="#">مقالات</a>
-                <a href="#">دل نوشته</a>
-                <a href="#">تبلیغات</a>
-
-            </div>
-        </nav>
-
-    </header>
-
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="page-layout">
-            <aside class="sidebar sponsored-sidebar" aria-labelledby="sponsored-title">
-                <h2 class="sidebar-title" id="sponsored-title">حامیان مالی</h2>
-
-                <a class="sponsored-card" href="#">
-                    <div class="ad-image"><span>تصویر تبلیغ</span></div>
-                    <div class="ad-copy">
-                        <span>پیشنهاد ویژه</span>
-                        <h3>دوره جمع‌بندی و آمادگی برای آزمون</h3>
-                        <small>با حمایت مجموعه آموزشی پویا</small>
-                    </div>
-                </a>
-
-                <a class="sponsored-card" href="#">
-                    <div class="ad-image"><span>تصویر تبلیغ</span></div>
-                    <div class="ad-copy">
-                        <span>ثبت‌نام آغاز شد</span>
-                        <h3>مشاوره تخصصی و برنامه‌ریزی درسی</h3>
-                        <small>با حمایت مرکز مشاوره مسیر</small>
-                    </div>
-                </a>
-
-                <a class="sponsored-card" href="#">
-                    <div class="ad-image"><span>تصویر تبلیغ</span></div>
-                    <div class="ad-copy">
-                        <span>معرفی کتاب</span>
-                        <h3>منابع تازه برای مرور و جمع‌بندی</h3>
-                        <small>با حمایت فروشگاه کتاب دانش</small>
-                    </div>
-                </a>
-
-                <div class="ad-promo-panel premium-promo">
-                    <span class="promo-label">تبلیغ در پویا تایمز</span>
-                    <h3>برند شما می‌تواند اینجا دیده شود</h3>
-                    <p>جایگاه ویژه برای معرفی خدمات آموزشی، کتاب‌ها و رویدادهای مرتبط با دانش‌آموزان.</p>
-                    <div class="promo-features">
-                        <span>نمایش هدفمند</span>
-                        <span>جایگاه ویژه</span>
-                    </div>
-                    <a class="promo-button" href="#">درخواست تبلیغات</a>
+            </a>
+            <a class="sponsored-card" href="#">
+                <div class="ad-image"><span>تصویر تبلیغ</span></div>
+                <div class="ad-copy">
+                    <span>ثبت‌نام آغاز شد</span>
+                    <h3>مشاوره تخصصی و برنامه‌ریزی درسی</h3>
+                    <small>با حمایت مرکز مشاوره مسیر</small>
                 </div>
-            </aside>
+            </a>
+            <a class="sponsored-card" href="#">
+                <div class="ad-image"><span>تصویر تبلیغ</span></div>
+                <div class="ad-copy">
+                    <span>معرفی کتاب</span>
+                    <h3>منابع تازه برای مرور و جمع‌بندی</h3>
+                    <small>با حمایت فروشگاه کتاب دانش</small>
+                </div>
+            </a>
 
-            <section class="news-paper">
+            <div class="ad-promo-panel premium-promo">
+                <span class="promo-label">تبلیغ در پویا تایمز</span>
+                <h3>برند شما می‌تواند اینجا دیده شود</h3>
+                <p>جایگاه ویژه برای معرفی خدمات آموزشی، کتاب‌ها و رویدادهای مرتبط با دانش‌آموزان.</p>
+                <div class="promo-features">
+                    <span>نمایش هدفمند</span>
+                    <span>جایگاه ویژه</span>
+                </div>
+                <a class="promo-button" href="#">درخواست تبلیغات</a>
+            </div>
+        </aside>
+
+        <section class="news-paper" aria-label="آخرین اخبار">
+            {% if featured_news %}
                 <div class="featured-stories">
                     <article class="lead-story">
-                        <span class="story-label">خبر ویژه</span>
-                        <a href="#">
-                            <h1>تازه‌ترین تغییرات کنکور و نکاتی که داوطلبان باید بدانند</h1>
+                        <span class="story-label">{{ featured_news.category.name }}</span>
+                        <a href="{{ featured_news.get_absolute_url }}">
+                            <h1>{{ featured_news.title }}</h1>
                         </a>
-
                         <div class="story-author">
-                            <span class="author-avatar">م</span>
-                            <span>مریم احمدی</span>
+                            <span class="author-avatar">{{ featured_news.author_display_name|first }}</span>
+                            <span>{{ featured_news.author_display_name }}</span>
                         </div>
-
-                        <p class="story-summary">
-                            بررسی مهم‌ترین خبرهای کنکور، زمان‌بندی‌ها و تغییراتی که می‌تواند
-                            بر برنامه مطالعاتی داوطلبان اثر بگذارد.
-                        </p>
-                        <span class="read-time">۵ دقیقه مطالعه</span>
+                        <p class="story-summary">{{ featured_news.summary }}</p>
+                        <span class="read-time">{{ featured_news.reading_time }} دقیقه مطالعه</span>
                     </article>
 
-                    <a class="hero-story" href="#" aria-label="مطالعه خبر اصلی">
+                    <a class="hero-story" href="{{ featured_news.get_absolute_url }}" aria-label="مطالعه {{ featured_news.title }}">
                         <div class="story-image story-image-large">
-                            <span>تصویر خبر اصلی</span>
+                            {% if featured_news.display_image_url %}
+                                <img src="{{ featured_news.display_image_url }}" alt="{{ featured_news.title }}">
+                            {% else %}
+                                <span>تصویر خبر اصلی</span>
+                            {% endif %}
                         </div>
                     </a>
                 </div>
 
-                <a class="secondary-feature" href="#">
-                    <div class="secondary-copy">
-                        <span class="story-label">گزارش</span>
-                        <h2>برنامه‌ریزی در ماه‌های پایانی؛ از مرور درس‌ها تا مدیریت آزمون</h2>
-                        <p>یک راهنمای کوتاه برای حفظ تمرکز، مرور هدفمند و تحلیل نتیجه آزمون‌ها.</p>
-                        <span class="read-time">۶ دقیقه مطالعه</span>
-                    </div>
-                    <div class="story-image story-image-medium"><span>تصویر گزارش</span></div>
-                </a>
-
-                <div class="story-strip">
-                    <a class="strip-story" href="#">
-                        <div class="story-image story-image-small"><span>تصویر</span></div>
-                        <div>
-                            <span class="story-label">راهنمای مطالعه</span>
-                            <h3>چطور یک برنامه هفتگی واقع‌بینانه بنویسیم؟</h3>
-                            <span class="read-time">۴ دقیقه مطالعه</span>
+                {% if secondary_news %}
+                    <a class="secondary-feature" href="{{ secondary_news.get_absolute_url }}">
+                        <div class="secondary-copy">
+                            <span class="story-label">{{ secondary_news.category.name }}</span>
+                            <h2>{{ secondary_news.title }}</h2>
+                            <p>{{ secondary_news.summary }}</p>
+                            <span class="read-time">{{ secondary_news.reading_time }} دقیقه مطالعه</span>
+                        </div>
+                        <div class="story-image story-image-medium">
+                            {% if secondary_news.display_image_url %}
+                                <img src="{{ secondary_news.display_image_url }}" alt="{{ secondary_news.title }}">
+                            {% else %}
+                                <span>تصویر گزارش</span>
+                            {% endif %}
                         </div>
                     </a>
+                {% endif %}
 
-                    <a class="strip-story" href="#">
-                        <div class="story-image story-image-small"><span>تصویر</span></div>
-                        <div>
-                            <span class="story-label">اخبار</span>
-                            <h3>جزئیات تازه درباره منابع و زمان برگزاری آزمون</h3>
-                            <span class="read-time">۳ دقیقه مطالعه</span>
+                {% if strip_news %}
+                    <div class="story-strip">
+                        {% for item in strip_news %}
+                            <a class="strip-story" href="{{ item.get_absolute_url }}">
+                                <div class="story-image story-image-small">
+                                    {% if item.display_image_url %}
+                                        <img src="{{ item.display_image_url }}" alt="{{ item.title }}">
+                                    {% else %}
+                                        <span>تصویر</span>
+                                    {% endif %}
+                                </div>
+                                <div>
+                                    <span class="story-label">{{ item.category.name }}</span>
+                                    <h3>{{ item.title }}</h3>
+                                    <span class="read-time">{{ item.reading_time }} دقیقه مطالعه</span>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if archive_news %}
+                    <section class="more-stories">
+                        <div class="archive-heading">
+                            <span>مطالب پیشین</span>
+                            <h2>آرشیو اخبار</h2>
                         </div>
-                    </a>
+                        <div class="more-stories-grid">
+                            {% for item in archive_news %}
+                                <a class="more-story" href="{{ item.get_absolute_url }}">
+                                    <div class="more-story-copy">
+                                        <span class="story-label">{{ item.category.name }}</span>
+                                        <h3>{{ item.title }}</h3>
+                                        <span class="read-time">{{ item.reading_time }} دقیقه مطالعه</span>
+                                    </div>
+                                    <div class="story-image story-image-thumb">
+                                        {% if item.display_image_url %}
+                                            <img src="{{ item.display_image_url }}" alt="{{ item.title }}">
+                                        {% else %}
+                                            <span>تصویر</span>
+                                        {% endif %}
+                                    </div>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </section>
+                {% endif %}
+            {% else %}
+                <div class="empty-news-state homepage-empty-state">
+                    <span class="story-label">تحریریه پویا تایمز</span>
+                    <h1>خبرها به‌زودی منتشر می‌شوند</h1>
+                    <p>پس از انتشار اولین خبر در پنل مدیریت، محتوای این بخش به‌صورت خودکار نمایش داده می‌شود.</p>
                 </div>
-
-                <section class="more-stories">
-                    <div class="archive-heading">
-                        <span>مطالب پیشین</span>
-                        <h2>آرشیو اخبار و دیدگاه مشاوران</h2>
-                    </div>
-
-                    <div class="more-stories-grid">
-                        <a class="more-story" href="#">
-                            <div class="more-story-copy">
-                                <span class="story-label">از آرشیو اخبار</span>
-                                <h3>مصوبه‌های مهم آموزشی سال گذشته چه تأثیری بر کنکور امسال دارند؟</h3>
-                                <span class="read-time">۵ دقیقه مطالعه</span>
-                            </div>
-                            <div class="story-image story-image-thumb"><span>تصویر</span></div>
-                        </a>
-
-                        <a class="more-story" href="#">
-                            <div class="more-story-copy">
-                                <span class="story-label">دیدگاه مشاور</span>
-                                <h3>چرا تحلیل خبرهای کنکور باید بخشی از برنامه داوطلب باشد؟</h3>
-                                <span class="consultant-name">یادداشت دکتر امیر رضایی</span>
-                                <span class="read-time">۷ دقیقه مطالعه</span>
-                            </div>
-                            <div class="story-image story-image-thumb portrait"><span>مشاور</span></div>
-                        </a>
-
-                        <a class="more-story" href="#">
-                            <div class="more-story-copy">
-                                <span class="story-label">از آرشیو اخبار</span>
-                                <h3>مروری بر تغییرات دفترچه انتخاب رشته در دوره گذشته</h3>
-                                <span class="read-time">۴ دقیقه مطالعه</span>
-                            </div>
-                            <div class="story-image story-image-thumb"><span>تصویر</span></div>
-                        </a>
-
-                        <a class="more-story" href="#">
-                            <div class="more-story-copy">
-                                <span class="story-label">دیدگاه مشاور</span>
-                                <h3>آیا خبرهای جدید باید برنامه مطالعاتی شما را تغییر دهند؟</h3>
-                                <span class="consultant-name">یادداشت سارا محمدی</span>
-                                <span class="read-time">۶ دقیقه مطالعه</span>
-                            </div>
-                            <div class="story-image story-image-thumb portrait"><span>مشاور</span></div>
-                        </a>
-                    </div>
-                </section>
-            </section>
-
-            <aside class="sidebar text-ad-sidebar" aria-labelledby="text-ads-title">
-                <h2 class="sidebar-title" id="text-ads-title">تبلیغات متنی و اقتصادی</h2>
-
-                <a class="text-ad" href="#">
-                    <span>آگهی آموزشی</span>
-                    <h3>تدریس خصوصی ریاضی و فیزیک کنکور</h3>
-                    <p>جلسات حضوری و آنلاین با برنامه متناسب با سطح دانش‌آموز.</p>
-                </a>
-
-                <a class="text-ad" href="#">
-                    <span>آگهی مشاوره</span>
-                    <h3>برنامه‌ریزی هفتگی ویژه داوطلبان</h3>
-                    <p>پیگیری منظم، تحلیل آزمون و اصلاح برنامه مطالعاتی.</p>
-                </a>
-
-                <a class="text-ad" href="#">
-                    <span>آگهی کتاب</span>
-                    <h3>خرید و فروش کتاب‌های کمک‌آموزشی</h3>
-                    <p>کتاب‌های نو و دست‌دوم با قیمت مناسب برای همه رشته‌ها.</p>
-                </a>
-
-                <div class="ad-promo-panel economy-promo">
-                    <span class="promo-label">جای آگهی شما خالی است</span>
-                    <h3>تبلیغ ساده، اقتصادی و مؤثر</h3>
-                    <p>خدمات آموزشی یا مشاوره‌ای خود را با یک آگهی متنی کوتاه به مخاطبان معرفی کنید.</p>
-                    <span class="promo-price">مناسب برای کسب‌وکارهای کوچک</span>
-                    <a class="promo-button promo-button-outline" href="#">ثبت آگهی متنی</a>
-                </div>
-            </aside>
-        </div>
-
-        <section class="trending-searches" aria-labelledby="trending-title">
-            <div class="trending-heading">
-                <span>موضوعات مورد توجه خوانندگان</span>
-                <h2 id="trending-title">جست‌وجوهای پرطرفدار</h2>
-            </div>
-
-            <div class="trending-grid">
-                <section class="trend-topic">
-                    <h3>راهکارهای افزایش تمرکز</h3>
-                    <div class="trend-links">
-                        <a href="#">چطور هنگام مطالعه حواس‌پرتی را کنترل کنیم؟</a>
-                        <a href="#">پنج تمرین ساده برای افزایش تمرکز روزانه</a>
-                        <a href="#">نقش خواب و تغذیه در تمرکز دانش‌آموزان</a>
-                    </div>
-                </section>
-
-                <section class="trend-topic">
-                    <h3>برنامه‌ریزی کنکور</h3>
-                    <div class="trend-links">
-                        <a href="#">چگونه یک برنامه درسی قابل اجرا طراحی کنیم؟</a>
-                        <a href="#">اشتباه‌های رایج در برنامه‌ریزی هفتگی</a>
-                        <a href="#">روش درست جبران عقب‌ماندگی‌های درسی</a>
-                    </div>
-                </section>
-
-                <section class="trend-topic">
-                    <h3>مدیریت استرس آزمون</h3>
-                    <div class="trend-links">
-                        <a href="#">راه‌های کاهش اضطراب در شب قبل از آزمون</a>
-                        <a href="#">چطور بعد از یک نتیجه ضعیف دوباره شروع کنیم؟</a>
-                        <a href="#">تکنیک‌های تنفس برای آرامش و کنترل ذهن</a>
-                    </div>
-                </section>
-
-                <section class="trend-topic">
-                    <h3>روش‌های مطالعه</h3>
-                    <div class="trend-links">
-                        <a href="#">مطالعه فعال چیست و چگونه انجام می‌شود؟</a>
-                        <a href="#">بهترین روش مرور مطالب در فاصله‌های زمانی</a>
-                        <a href="#">خلاصه‌نویسی مؤثر برای درس‌های حفظی و مفهومی</a>
-                    </div>
-                </section>
-            </div>
+            {% endif %}
         </section>
-    </main>
 
+        <aside class="sidebar text-ad-sidebar" aria-labelledby="text-ads-title">
+            <h2 class="sidebar-title" id="text-ads-title">تبلیغات متنی و اقتصادی</h2>
+            <a class="text-ad" href="#">
+                <span>آگهی آموزشی</span>
+                <h3>تدریس خصوصی ریاضی و فیزیک کنکور</h3>
+                <p>جلسات حضوری و آنلاین با برنامه متناسب با سطح دانش‌آموز.</p>
+            </a>
+            <a class="text-ad" href="#">
+                <span>آگهی مشاوره</span>
+                <h3>برنامه‌ریزی هفتگی ویژه داوطلبان</h3>
+                <p>پیگیری منظم، تحلیل آزمون و اصلاح برنامه مطالعاتی.</p>
+            </a>
+            <a class="text-ad" href="#">
+                <span>آگهی کتاب</span>
+                <h3>خرید و فروش کتاب‌های کمک‌آموزشی</h3>
+                <p>کتاب‌های نو و دست‌دوم با قیمت مناسب برای همه رشته‌ها.</p>
+            </a>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-intro">
-                <a class="footer-logo" href="/">Pooya Times</a>
-                <p>
-                    پویا تایمز یک رسانه فارسی برای خبرهای آموزشی، مشاوره تحصیلی و
-                    مطالب کاربردی ویژه دانش‌آموزان و داوطلبان کنکور است. تلاش می‌کنیم
-                    اطلاعات روشن، قابل اعتماد و مفیدی برای تصمیم‌گیری بهتر منتشر کنیم.
-                </p>
+            <div class="ad-promo-panel economy-promo">
+                <span class="promo-label">جای آگهی شما خالی است</span>
+                <h3>تبلیغ ساده، اقتصادی و مؤثر</h3>
+                <p>خدمات آموزشی یا مشاوره‌ای خود را با یک آگهی متنی کوتاه به مخاطبان معرفی کنید.</p>
+                <span class="promo-price">مناسب برای کسب‌وکارهای کوچک</span>
+                <a class="promo-button promo-button-outline" href="#">ثبت آگهی متنی</a>
             </div>
+        </aside>
+    </div>
 
-            <div class="footer-divider"></div>
-
-            <div class="footer-links-grid">
-                <section class="footer-column">
-                    <h2>بیشتر از پویا تایمز</h2>
-                    <a href="#">درباره ما</a>
-                    <a href="#">تماس با ما</a>
-                    <a href="#">همکاری با ما</a>
-                    <a href="#">خبرنامه</a>
-                </section>
-
-                <section class="footer-column">
-                    <h2>مطالب و خدمات</h2>
-                    <a href="#">اخبار کنکور</a>
-                    <a href="#">مقالات آموزشی</a>
-                    <a href="#">مشاوره تحصیلی</a>
-                    <a href="#">نوشته‌های شخصی</a>
-                </section>
-
-                <section class="footer-column">
-                    <h2>راهنما و قوانین</h2>
-                    <a href="#">پرسش‌های متداول</a>
-                    <a href="#">قوانین انتشار محتوا</a>
-                    <a href="#">حریم خصوصی</a>
-                    <a href="#">نقشه سایت</a>
-                </section>
-
-                <section class="footer-column">
-                    <h2>تبلیغات و حساب</h2>
-                    <a href="#">ثبت آگهی</a>
-                    <a href="#">تعرفه تبلیغات</a>
-                    <a href="#">ورود به حساب</a>
-                    <a href="#">مدیریت حساب کاربری</a>
-                </section>
-            </div>
-
-            <div class="footer-divider"></div>
-
-            <div class="footer-bottom">
-                <p>© ۲۰۲۶ پویا تایمز؛ همه حقوق محفوظ است.</p>
-                <div>
-                    <a href="#">شرایط استفاده</a>
-                    <a href="#">سیاست حفظ حریم خصوصی</a>
-                    <a href="#">مدیریت کوکی‌ها</a>
-                </div>
-            </div>
+    <section class="trending-searches" aria-labelledby="trending-title">
+        <div class="trending-heading">
+            <span>موضوعات مورد توجه خوانندگان</span>
+            <h2 id="trending-title">جست‌وجوهای پرطرفدار</h2>
         </div>
-    </footer>
-
-</body>
-
-</html>
+        <div class="trending-grid">
+            <section class="trend-topic">
+                <h3>راهکارهای افزایش تمرکز</h3>
+                <div class="trend-links">
+                    <a href="{% url 'news:list' %}?q=تمرکز">چطور هنگام مطالعه حواس‌پرتی را کنترل کنیم؟</a>
+                    <a href="{% url 'news:list' %}?q=تمرکز">پنج تمرین ساده برای افزایش تمرکز روزانه</a>
+                    <a href="{% url 'news:list' %}?q=خواب">نقش خواب و تغذیه در تمرکز دانش‌آموزان</a>
+                </div>
+            </section>
+            <section class="trend-topic">
+                <h3>برنامه‌ریزی کنکور</h3>
+                <div class="trend-links">
+                    <a href="{% url 'news:list' %}?q=برنامه‌ریزی">چگونه یک برنامه درسی قابل اجرا طراحی کنیم؟</a>
+                    <a href="{% url 'news:list' %}?q=برنامه‌ریزی">اشتباه‌های رایج در برنامه‌ریزی هفتگی</a>
+                    <a href="{% url 'news:list' %}?q=مطالعه">روش درست جبران عقب‌ماندگی‌های درسی</a>
+                </div>
+            </section>
+            <section class="trend-topic">
+                <h3>مدیریت استرس آزمون</h3>
+                <div class="trend-links">
+                    <a href="{% url 'news:list' %}?q=استرس">راه‌های کاهش اضطراب در شب قبل از آزمون</a>
+                    <a href="{% url 'news:list' %}?q=آزمون">چطور بعد از یک نتیجه ضعیف دوباره شروع کنیم؟</a>
+                    <a href="{% url 'news:list' %}?q=آرامش">تکنیک‌های تنفس برای آرامش و کنترل ذهن</a>
+                </div>
+            </section>
+            <section class="trend-topic">
+                <h3>روش‌های مطالعه</h3>
+                <div class="trend-links">
+                    <a href="{% url 'news:list' %}?q=مطالعه">مطالعه فعال چیست و چگونه انجام می‌شود؟</a>
+                    <a href="{% url 'news:list' %}?q=مرور">بهترین روش مرور مطالب در فاصله‌های زمانی</a>
+                    <a href="{% url 'news:list' %}?q=خلاصه‌نویسی">خلاصه‌نویسی مؤثر برای درس‌های حفظی و مفهومی</a>
+                </div>
+            </section>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}اخبار | Pooya Times{% endblock %}
+{% block meta_description %}تازه‌ترین اخبار آموزشی و کنکور در پویا تایمز{% endblock %}
+
+{% block content %}
+<main class="content-page">
+    <header class="page-heading">
+        <span>تحریریه پویا تایمز</span>
+        <h1>اخبار</h1>
+        <p>تازه‌ترین خبرهای آموزشی، کنکور و رویدادهای مرتبط با دانش‌آموزان.</p>
+    </header>
+
+    <form class="news-filters" method="get">
+        <label>
+            <span>جست‌وجو در اخبار</span>
+            <input type="search" name="q" value="{{ query }}" placeholder="عنوان یا عبارت مورد نظر">
+        </label>
+        <label>
+            <span>دسته‌بندی</span>
+            <select name="category">
+                <option value="">همه دسته‌ها</option>
+                {% for category in categories %}
+                    <option value="{{ category.slug }}"{% if selected_category == category.slug %} selected{% endif %}>{{ category.name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <button type="submit">جست‌وجو</button>
+    </form>
+
+    {% if news_items %}
+        <div class="news-list-grid">
+            {% for item in news_items %}
+                <article class="news-list-card">
+                    <a class="news-list-image" href="{{ item.get_absolute_url }}">
+                        {% if item.display_image_url %}
+                            <img src="{{ item.display_image_url }}" alt="{{ item.title }}">
+                        {% else %}
+                            <span>Pooya Times</span>
+                        {% endif %}
+                    </a>
+                    <div>
+                        <span class="story-label">{{ item.category.name }}</span>
+                        <h2><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h2>
+                        <p>{{ item.summary }}</p>
+                        <div class="news-meta">
+                            <span>{{ item.author_display_name }}</span>
+                            <span>{{ item.reading_time }} دقیقه مطالعه</span>
+                            <time datetime="{{ item.published_at|date:'c' }}">{{ item.published_at|date:"j F Y" }}</time>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+
+        {% if is_paginated %}
+            <nav class="pagination" aria-label="صفحه‌بندی اخبار">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}&q={{ query }}&category={{ selected_category }}">صفحه قبل</a>
+                {% endif %}
+                <span>صفحه {{ page_obj.number }} از {{ page_obj.paginator.num_pages }}</span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}&q={{ query }}&category={{ selected_category }}">صفحه بعد</a>
+                {% endif %}
+            </nav>
+        {% endif %}
+    {% else %}
+        <div class="empty-news-state">
+            <h2>خبری پیدا نشد</h2>
+            <p>عبارت جست‌وجو یا دسته‌بندی را تغییر دهید و دوباره امتحان کنید.</p>
+        </div>
+    {% endif %}
+</main>
+{% endblock %}

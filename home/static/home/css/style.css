@@ -696,6 +696,343 @@ a {
 
 
 /* --------------------
+   Dynamic News Pages
+-------------------- */
+
+.story-image img,
+.news-list-image img,
+.article-hero img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.content-page,
+.article-page {
+    width: 92%;
+    max-width: 1200px;
+    margin: 54px auto 0;
+}
+
+.page-heading {
+    padding-bottom: 26px;
+    border-bottom: 2px solid var(--royal-navy);
+}
+
+.page-heading > span {
+    color: var(--deep-gold);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.page-heading h1 {
+    margin: 7px 0 10px;
+    color: var(--ink);
+    font-size: clamp(34px, 6vw, 58px);
+}
+
+.page-heading p {
+    max-width: 700px;
+    margin: 0;
+    color: var(--muted-ink);
+    line-height: 1.8;
+}
+
+.news-filters {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(180px, 0.7fr) auto;
+    gap: 16px;
+    align-items: end;
+    margin: 30px 0 40px;
+    padding: 20px;
+    border: 1px solid var(--royal-line);
+    background: var(--paper);
+}
+
+.news-filters label span {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--royal-navy);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.news-filters input,
+.news-filters select,
+.news-filters button {
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid var(--royal-line);
+    font: inherit;
+}
+
+.news-filters input,
+.news-filters select {
+    padding: 0 12px;
+    background: #fff;
+    color: var(--ink);
+}
+
+.news-filters button {
+    padding: 0 24px;
+    border-color: var(--royal-navy);
+    background: var(--royal-navy);
+    color: var(--paper);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.news-filters button:hover {
+    border-color: var(--antique-gold);
+    background: var(--antique-gold);
+    color: var(--royal-navy);
+}
+
+.news-list-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 34px 26px;
+}
+
+.news-list-card {
+    min-width: 0;
+    border-bottom: 1px solid var(--royal-line);
+    padding-bottom: 24px;
+}
+
+.news-list-image {
+    aspect-ratio: 16 / 10;
+    display: grid;
+    place-items: center;
+    margin-bottom: 18px;
+    overflow: hidden;
+    border: 1px solid var(--deep-gold);
+    background: linear-gradient(135deg, var(--royal-navy), var(--royal-navy-soft));
+    color: var(--antique-gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+}
+
+.news-list-card h2 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.55;
+}
+
+.news-list-card h2 a:hover {
+    color: var(--deep-gold);
+}
+
+.news-list-card p {
+    margin: 12px 0;
+    color: var(--muted-ink);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.news-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 16px;
+    color: var(--muted-ink);
+    font-size: 12px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 42px;
+}
+
+.pagination a {
+    padding: 10px 16px;
+    border: 1px solid var(--royal-navy);
+    color: var(--royal-navy);
+    font-weight: 700;
+}
+
+.pagination a:hover {
+    background: var(--royal-navy);
+    color: var(--paper);
+}
+
+.empty-news-state {
+    padding: 70px 24px;
+    border: 1px solid var(--royal-line);
+    background: var(--paper);
+    text-align: center;
+}
+
+.empty-news-state h1,
+.empty-news-state h2 {
+    margin: 0 0 12px;
+    color: var(--ink);
+}
+
+.empty-news-state p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--muted-ink);
+    line-height: 1.8;
+}
+
+.homepage-empty-state {
+    margin: 28px 0;
+}
+
+.article-detail {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.article-header {
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--royal-line);
+}
+
+.article-header h1 {
+    margin: 10px 0 18px;
+    color: var(--ink);
+    font-size: clamp(34px, 6vw, 62px);
+    line-height: 1.35;
+}
+
+.article-lead {
+    margin: 0 0 22px;
+    color: var(--muted-ink);
+    font-size: 20px;
+    line-height: 1.9;
+}
+
+.article-meta {
+    font-size: 14px;
+}
+
+.article-hero {
+    aspect-ratio: 16 / 9;
+    margin: 34px 0;
+    overflow: hidden;
+}
+
+.article-body {
+    color: #302a25;
+    font-size: 18px;
+    line-height: 2.15;
+}
+
+.article-body p {
+    margin: 0 0 24px;
+}
+
+.article-text-block + .article-text-block {
+    margin-top: 28px;
+}
+
+.article-inline-image {
+    margin: 38px 0;
+}
+
+.article-inline-image img {
+    width: 100%;
+    max-height: 680px;
+    display: block;
+    object-fit: contain;
+    background: var(--paper);
+}
+
+.article-inline-image figcaption {
+    margin-top: 10px;
+    color: var(--muted-ink);
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.article-attachments {
+    margin-top: 46px;
+    padding-top: 24px;
+    border-top: 2px solid var(--royal-navy);
+}
+
+.article-attachments h2 {
+    margin: 0 0 16px;
+    color: var(--ink);
+    font-size: 24px;
+}
+
+.article-attachments a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--royal-line);
+    color: var(--royal-navy);
+    font-weight: 700;
+}
+
+.article-attachments a:hover {
+    color: var(--deep-gold);
+}
+
+.article-attachments small {
+    color: var(--deep-gold);
+    white-space: nowrap;
+}
+
+.related-news {
+    max-width: 1000px;
+    margin: 70px auto 0;
+    padding-top: 26px;
+    border-top: 2px solid var(--royal-navy);
+}
+
+.related-news > h2 {
+    margin: 0 0 24px;
+    font-size: 28px;
+}
+
+.related-news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.related-news-grid a {
+    padding: 20px;
+    border: 1px solid var(--royal-line);
+    background: var(--paper);
+}
+
+.related-news-grid span {
+    color: var(--deep-gold);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.related-news-grid h3 {
+    margin: 8px 0 0;
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+    .news-filters,
+    .news-list-grid,
+    .related-news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-list-grid {
+        gap: 28px;
+    }
+}
+
+/* --------------------
    Royal Theme
 -------------------- */
 
